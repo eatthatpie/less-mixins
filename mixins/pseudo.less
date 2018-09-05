@@ -1,0 +1,98 @@
+.pseudo(@content: '') {
+    &:before,
+    &:after {
+        content: @content;
+    }
+}
+
+.pseudo-before(@content: '') {
+    &:before {
+        content: @content;
+    }
+}
+
+.pseudo-after(@content: '') {
+    &:after {
+        content: @content;
+    }
+}
+
+.pseudo-cover(@content: '', @d: 0, @bgcolor: transparent, @color: inherit) {
+    position: relative;
+    
+    &:before,
+    &:after {
+        top: @d; bottom: @d;
+        left: @d; right: @d;
+        position: absolute;
+        background-color: @bgcolor;
+        color: @color;
+        content: @content;
+    }
+}
+
+.pseudo-cover(@content: '', @x: 0, @y: 0, @bgcolor: transparent, @color: inherit) {
+    position: relative;
+    
+    &:before,
+    &:after {
+        top: @y; bottom: @y;
+        left: @x; right: @x;
+        position: absolute;
+        background-color: @bgcolor;
+        color: @color;
+        content: @content;
+    }
+}
+
+.pseudo-cover-before(@content: '', @d: 0, @bgcolor: transparent, @color: inherit) {
+    position: relative;
+    
+    &:before {
+        top: @d; bottom: @d;
+        left: @d; right: @d;
+        position: absolute;
+        background-color: @bgcolor;
+        color: @color;
+        content: @content;
+    }
+}
+
+.pseudo-cover-before(@content: '', @x: 0, @y: 0, @bgcolor: transparent, @color: inherit) {
+    position: relative;
+    
+    &:before {
+        top: @y; bottom: @y;
+        left: @x; right: @x;
+        position: absolute;
+        background-color: @bgcolor;
+        color: @color;
+        content: @content;
+    }
+}
+
+.pseudo-cover-after(@content: '', @d: 0, @bgcolor: transparent, @color: inherit) {
+    position: relative;
+    
+    &:after {
+        top: @d; bottom: @d;
+        left: @d; right: @d;
+        position: absolute;
+        background-color: @bgcolor;
+        color: @color;
+        content: @content;
+    }
+}
+
+.pseudo-cover-after(@content: '', @x: 0, @y: 0, @bgcolor: transparent, @color: inherit) {
+    position: relative;
+    
+    &:after {
+        top: @y; bottom: @y;
+        left: @x; right: @x;
+        position: absolute;
+        background-color: @bgcolor;
+        color: @color;
+        content: @content;
+    }
+}
