@@ -1,0 +1,41 @@
+.color(@color: inherit, @bgcolor: transparent) {
+    color: @color;
+    background-color: @bgcolor;
+}
+
+.color(@color: inherit, @bgcolor: transparent, @opacity: 100%) {
+    color: fade(@color, @opacity);
+    background-color: fade(@bgcolor, @opacity);
+}
+
+.color-front(@color: inherit) {
+    color: @color;
+}
+
+.color-front(@color: inherit, @opacity: 100%) {
+    color: fade(@color, @opacity);
+}
+
+.color-front-rgb(@r: 0, @g: 0, @b: 0) {
+    color: rgb(@r, @g, @b);
+}
+
+.color-front-rgba(@r: 0, @g: 0, @b: 0, @a: 1) {
+    color: rgba(@r, @g, @b, @a);
+}
+
+.color-bg(@bgcolor: transparent) {
+    background-color: @bgcolor;
+}
+
+.color-bg(@bgcolor: transparent, @opacity: 100%) {
+    background-color: fade(@bgcolor, @opacity);
+}
+
+.color-bg-rgb(@r: 255, @g: 255, @b: 255) {
+    background-color: rgba(@r, @g, @b);
+}
+
+.color-bg-rgba(@r: 255, @g: 255, @b: 255, @a: 0) {
+    background-color: rgba(@r, @g, @b, @a);
+}
