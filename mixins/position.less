@@ -1,0 +1,37 @@
+.position(@x, @y, @type: absolute) {
+    left: @x;
+    top: @y;
+    position: @type;
+}
+
+.position(@x, @y, @width, @height, @type: absolute) {
+    left: @x;
+    top: @y;
+    width: @width;
+    height: @height;
+    position: @type;
+}
+
+.position-cover(@margin: 0) {
+    left: @margin; right: @margin;
+    top: @value; bottom: @margin;
+    position: absolute;
+}
+
+.position-cover(@x: 0, @y: 0) {
+    left: @x; right: @x;
+    top: @y; bottom: @y;
+    position: absolute;
+}
+
+.position-fixed(@margin: 0) {
+    left: @margin; right: @margin;
+    top: @value; bottom: @margin;
+    position: fixed;
+}
+
+.position-fixed(@x: 0, @y: 0) {
+    left: @x; right: @x;
+    top: @y; bottom: @y;
+    position: fixed;
+}
