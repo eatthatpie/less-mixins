@@ -1,0 +1,47 @@
+.inline-block(@width: auto, @valign: baseline) {
+    display: inline-block;
+    vertical-align: @valign;
+    width: @width;
+}
+
+.inline-block-top(@width: auto) {
+    .inline-block(@width, top);
+}
+
+.inline-block-middle(@width: auto) {
+    .inline-block(@width, middle);
+}
+
+.inline-block-bottom(@width: auto) {
+    .inline-block(@width, bottom);
+}
+
+.inline-block-children(@width: auto, @valign: baseline) {
+    > * {
+        .inline-block(@width, @valign);
+    }
+}
+
+.inlbl-ch(@width: auto, @valign: baseline) {
+    .inline-block-children(@width, @valign);
+}
+
+.inline-block-children-tag(@tag, @width: auto, @valign: baseline) {
+    > @{tag} {
+        .inline-block(@width, @valign);
+    }
+}
+
+.inlbl-ch-tag(@tag, @width: auto, @valign: baseline) {
+    .inline-block-children-tag(@tag, @width, @valign);
+}
+
+.inline-block-children-class(@class, @width: auto, @valign: baseline) {
+    > .@{class} {
+        .inline-block(@width, @valign);
+    }
+}
+
+.inlbl-ch-class(@class, @width: auto, @valign: baseline) {
+    .inline-block-children-class(@class, @width, @valign);
+}
