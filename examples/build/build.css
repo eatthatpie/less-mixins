@@ -1,0 +1,10 @@
+.test > div {
+  display: inline-block;
+  vertical-align: baseline;
+  width: auto;
+}
+.another-test > .some-class {
+  display: inline-block;
+  vertical-align: baseline;
+  width: auto;
+}
