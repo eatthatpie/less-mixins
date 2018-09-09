@@ -419,3 +419,43 @@
   -o-transform: none;
   transform: none;
 }
+.example-5 {
+  left: 100px;
+  top: 100px;
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 50px solid #339999;
+  position: absolute;
+}
+.example-6 {
+  top: 125px;
+  left: 180px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background-color: #339999;
+  border: 5px solid #117777;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.example-7 {
+  left: 0;
+  top: 147.5px;
+  height: 5px;
+  width: 100px;
+  background-color: #117777;
+  position: absolute;
+  -webkit-transform-origin: 0, 0;
+  -moz-transform-origin: 0, 0;
+  -ms-transform-origin: 0, 0;
+  -o-transform-origin: 0, 0;
+  transform-origin: 0, 0;
+  -webkit-transform: rotate(0rad);
+  -moz-transform: rotate(0rad);
+  -ms-transform: rotate(0rad);
+  -o-transform: rotate(0rad);
+  transform: rotate(0rad);
+}
