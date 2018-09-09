@@ -1,0 +1,166 @@
+.hover-line(@color: inherit, @thickness: 1px, @start: 50%) {
+    position: relative;
+
+    &:after {
+        left: 0;
+        right: 0;
+        bottom: (1px - @thickness);
+        height: @thickness;
+        background-color: @color;
+        position: absolute;
+        content: '';
+        -webkit-transform-origin: @start 50%;
+        -moz-transform-origin: @start 50%;
+        -ms-transform-origin: @start 50%;
+        -o-transform-origin: @start 50%;
+        transform-origin: @start 50%;
+        -webkit-transform: scaleX(0);
+        -moz-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+        -o-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all .2s;
+        -moz-transition: all .2s;
+        -ms-transition: all .2s;
+        -o-transition: all .2s;
+        transition: all .2s;
+    }
+
+    &:hover {
+        &:after {
+            -webkit-transform: none;
+            -moz-transform: none;
+            -ms-transform: none;
+            -o-transform: none;
+            transform: none;
+        }
+    }
+}
+
+.hover-line-left(@color: inherit, @thickness: 1px) {
+    .hover-line(@color, @thickness, 0);
+}
+
+.hover-line-middle(@color: inherit, @thickness: 1px) {
+    .hover-line(@color, @thickness, 50%);
+}
+
+.hover-line-right(@color: inherit, @thickness: 1px) {
+    .hover-line(@color, @thickness, 100%);
+}
+
+.hover-block-horizontal(@color: inherit, @bgcolor: inherit, @start: 50%) {
+    z-index: 1;
+    position: relative;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+
+    &:before {
+        z-index: -1;
+        left: 0; right: 0;
+        top: 0; bottom: 0;
+        background-color: @bgcolor;
+        position: absolute;
+        content: '';
+        -webkit-transform-origin: 50% @start;
+        -moz-transform-origin: 50% @start;
+        -ms-transform-origin: 50% @start;
+        -o-transform-origin: 50% @start;
+        transform-origin: 50% @start;
+        -webkit-transform: scaleY(0);
+        -moz-transform: scaleY(0);
+        -ms-transform: scaleY(0);
+        -o-transform: scaleY(0);
+        transform: scaleY(0);
+        -webkit-transition: all .2s;
+        -moz-transition: all .2s;
+        -ms-transition: all .2s;
+        -o-transition: all .2s;
+        transition: all .2s;
+    }
+
+    &:hover {
+        color: @color;
+
+        &:before {
+            -webkit-transform: none;
+            -moz-transform: none;
+            -ms-transform: none;
+            -o-transform: none;
+            transform: none;
+        }
+    }
+}
+
+.hover-block-horizontal-top(@color: inherit, @bgcolor: inherit) {
+    .hover-block-horizontal(@color, @bgcolor, 0);
+}
+
+.hover-block-horizontal-middle(@color: inherit, @bgcolor: inherit) {
+    .hover-block-horizontal(@color, @bgcolor, 50%);
+}
+
+.hover-block-horizontal-bottom(@color: inherit, @bgcolor: inherit) {
+    .hover-block-horizontal(@color, @bgcolor, 100%);
+}
+
+.hover-block-vertical(@color: inherit, @bgcolor: inherit, @start: 50%) {
+    z-index: 1;
+    position: relative;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+
+    &:before {
+        z-index: -1;
+        left: 0; right: 0;
+        top: 0; bottom: 0;
+        background-color: @bgcolor;
+        position: absolute;
+        content: '';
+        -webkit-transform-origin: @start 50%;
+        -moz-transform-origin: @start 50%;
+        -ms-transform-origin: @start 50%;
+        -o-transform-origin: @start 50%;
+        transform-origin: @start 50%;
+        -webkit-transform: scaleX(0);
+        -moz-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+        -o-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all .2s;
+        -moz-transition: all .2s;
+        -ms-transition: all .2s;
+        -o-transition: all .2s;
+        transition: all .2s;
+    }
+
+    &:hover {
+        color: @color;
+        
+        &:before {
+            -webkit-transform: none;
+            -moz-transform: none;
+            -ms-transform: none;
+            -o-transform: none;
+            transform: none;
+        }
+    }
+}
+
+.hover-block-vertical-left(@color: inherit, @bgcolor: inherit) {
+    .hover-block-vertical(@color, @bgcolor, 0);
+}
+
+.hover-block-vertical-middle(@color: inherit, @bgcolor: inherit) {
+    .hover-block-vertical(@color, @bgcolor, 50%);
+}
+
+.hover-block-vertical-right(@color: inherit, @bgcolor: inherit) {
+    .hover-block-vertical(@color, @bgcolor, 100%);
+}
