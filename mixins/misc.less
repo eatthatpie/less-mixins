@@ -1,0 +1,98 @@
+.animation(@expr) {
+    -webkit-animation: @expr;
+    -moz-animation: @expr;
+    -o-animation: @expr;
+    animation: @expr;
+}
+
+.animation(@keyframes, @duration, @length: infinite) {
+    -webkit-animation: @keyframes @duration @length;
+    -moz-animation: @keyframes @duration @length;
+    -o-animation: @keyframes @duration @length;
+    animation: @keyframes @duration @length;
+}
+
+.backface(@visibility: hidden) {
+    -webkit-backface-visibility: @visibility;
+    backface-visibility: @visibility;
+}
+
+.border-radius(@value) {
+    -webkit-border-radius: @value;
+    -moz-border-radius: @value;
+    border-radius: @value;
+}
+
+.border-radius(@tl, @tr, @br, @bl) {
+    -webkit-border-radius: @tl, @tr, @br, @bl;
+    -moz-border-radius: @tl, @tr, @br, @bl;
+    border-radius: @tl, @tr, @br, @bl;
+}
+
+.box-shadow(@expr) {
+    -webkit-box-shadow: @expr;
+    -moz-box-shadow: @expr;
+    box-shadow: @expr;
+}
+
+.box-shadow(@v, @h, @size, @color) {
+    -webkit-box-shadow: @v @h @size @color;
+    -moz-box-shadow: @v @h @size @color;
+    box-shadow: @v @h @size @color;
+}
+
+.center-both-axis(@backface: hidden) {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    .backface(@backface);
+}
+
+.center-horizontally(@backface: hidden) {
+    left: 50%;
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    .backface(@backface);
+}
+
+.center-vertically(@backface: hidden) {
+    top: 50%;
+    position: absolute;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    .backface(@backface);
+}
+
+.no-touch-highlight() {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.text-shadow(@expr) {
+    -webkit-text-shadow: @expr;
+    -moz-text-shadow: @expr;
+    text-shadow: @expr;
+}
+
+.text-shadow(@v, @h, @size, @color) {
+    -webkit-text-shadow: @v @h @size @color;
+    -moz-text-shadow: @v @h @size @color;
+    text-shadow: @v @h @size @color;
+}
