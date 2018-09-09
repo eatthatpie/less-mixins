@@ -12,6 +12,14 @@
     position: @type;
 }
 
+.position-relative(@x, @y) {
+    .position(@x, @y, relative);
+}
+
+.position-relative(@x, @y, @width, @height) {
+    .position(@x, @y, @width, @height);
+}
+
 .position-cover(@margin: 0) {
     left: @margin; right: @margin;
     top: @value; bottom: @margin;

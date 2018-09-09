@@ -1,0 +1,118 @@
+.transform-style(@expr: flat) {
+    -webkit-transform: @expr;
+    -moz-transform: @expr;
+    transform: @expr;
+}
+
+.transform-origin(@expr) {
+    -webkit-transform-origin: @expr;
+    -moz-transform-origin: @expr;
+    -ms-transform-origin: @expr;
+    -o-transform-origin: @expr;
+    transform-origin: @expr;
+}
+
+.transform-origin(@x, @y) {
+    -webkit-transform-origin: @x @y;
+    -moz-transform-origin: @x @y;
+    -ms-transform-origin: @x @y;
+    -o-transform-origin: @x @y;
+    transform-origin: @x @y;
+}
+
+.transform(@expr, @style: flat) {
+    .transform-style(@style);
+    -webkit-transform: @expr;
+    -moz-transform: @expr;
+    -ms-transform: @expr;
+    -o-transform: @expr;
+    transform: @expr;
+}
+
+.transform(@expr, @origin, @style: flat) {
+    .transform-style(@style);
+    .transform-origin(@origin);
+    -webkit-transform: @expr;
+    -moz-transform: @expr;
+    -ms-transform: @expr;
+    -o-transform: @expr;
+    transform: @expr;
+}
+
+.transform(@expr, @originX, @originY, @style: flat) {
+    .transform-style(@style);
+    .transform-origin(@originX, @originY);
+    -webkit-transform: @expr;
+    -moz-transform: @expr;
+    -ms-transform: @expr;
+    -o-transform: @expr;
+    transform: @expr;
+}
+
+.transform-translate(@x: 0, @y: 0, @z: 0, @style: flat) {
+    .transform(translate3d(@x, @y, @z), @style);
+}
+
+.transform-translate(@x: 0, @y: 0, @z: 0, @origin, @style: flat) {
+    .transform(translate3d(@x, @y, @z), @origin, @style);
+}
+
+.transform-translate(@x: 0, @y: 0, @z: 0, @originX, @originY, @style: flat) {
+    .transform(translate3d(@x, @y, @z), @originX, @originY, @style);
+}
+
+.transform-scale(@x: 1, @y: 1, @z: 1, @style: flat) {
+    .transform(scale(@x, @y, @z), @style);
+}
+
+.transform-scale(@x: 1, @y: 1, @z: 1, @origin, @style: flat) {
+    .transform(scale(@x, @y, @z), @origin, @style);
+}
+
+.transform-scale(@x: 1, @y: 1, @z: 1, @originX, @originY, @style: flat) {
+    .transform(scale(@x, @y, @z), @originX, @originY, @style);
+}
+
+.transform-rotate(@x: 0, @y: 0, @z: 0, @style: flat) {
+    .transform(rotate3d(@x, @y, @z), @style);
+}
+
+.transform-rotate(@x: 0, @y: 0, @z: 0, @origin, @style: flat) {
+    .transform(rotate3d(@x, @y, @z), @origin, @style);
+}
+
+.transform-rotate(@x: 0, @y: 0, @z: 0, @originX, @originY, @style: flat) {
+    .transform(rotate3d(@x, @y, @z), @originX, @originY, @style);
+}
+
+.transform-skew(@x: 0, @y: 0, @style: flat) {
+    .transform(skew(@x, @y), @style);
+}
+
+.transform-skew(@x: 0, @y: 0, @origin, @style: flat) {
+    .transform(skew(@x, @y), @origin, @style);
+}
+
+.transform-skew(@x: 0, @y: 0, @originX, @originY, @style: flat) {
+    .transform(skew(@x, @y), @originX, @originY, @style);
+}
+
+.transform-perspective(@value, @style: flat) {
+    .transform(perspective(@value), @style)
+}
+
+.transform-perspective(@value, @origin, @style: flat) {
+    .transform(perspective(@value), @origin, @style)
+}
+
+.transform-perspective(@value, @originX, @originY, @style: flat) {
+    .transform(perspective(@value), @originX, @originY, @style)
+}
+
+.transform-none() {
+    .transform(none);
+}
+
+.transform-reset() {
+    .transform-none();
+}
