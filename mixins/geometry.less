@@ -1,0 +1,141 @@
+.drawing-space(@width, @height) {
+    width: @width;
+    height: @height;
+    position: relative;
+}
+
+.circle(@x, @y, @r: 10px, @color: #ff0000, @stroke: 0px, @strokeColor: #000) {
+    top: @y - @r;
+    left: @x - @r;
+    width: 2 * @r;
+    height: 2 * @r;
+    position: absolute;
+    background-color: @color;
+    border: @stroke solid @strokeColor;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.line(@x0, @y0, @x1, @y1, @color: #000, @thickness: 1px) when (@x1 >= @x0) {
+    left: @x0;
+    top: @y0 - @thickness / 2;
+    height: @thickness;
+    width: sqrt(((@x1 - @x0) * (@x1 - @x0)) + ((@y1 - @y0) * (@y1 - @y0)));
+    background-color: @color;
+    position: absolute;
+
+    @angle: atan( (@y1 - @y0) / (@x1 - @x0) );
+
+    -webkit-transform-origin: 0, 0;
+    -moz-transform-origin: 0, 0;
+    -ms-transform-origin: 0, 0;
+    -o-transform-origin: 0, 0;
+    transform-origin: 0, 0;
+    -webkit-transform: rotate(@angle);
+    -moz-transform: rotate(@angle);
+    -ms-transform: rotate(@angle);
+    -o-transform: rotate(@angle);
+    transform: rotate(@angle);
+}
+
+
+.line(@x0, @y0, @x1, @y1, @color: #000, @thickness: 1px) when (@x1 < @x0) {
+    left: @x0;
+    top: @y0 - @thickness / 2;
+    height: @thickness;
+    width: sqrt(((@x1 - @x0)*(@x1 - @x0)) + ((@y1 - @y0)*(@y1 - @y0)));
+    background-color: @color;
+    position: absolute;
+
+    @angle: atan( (@y1 - @y0) / (@x1 - @x0) ) + pi();
+
+    -webkit-transform-origin: 0, 0;
+    -moz-transform-origin: 0, 0;
+    -ms-transform-origin: 0, 0;
+    -o-transform-origin: 0, 0;
+    transform-origin: 0, 0;
+    -webkit-transform: rotate(@angle);
+    -moz-transform: rotate(@angle);
+    -ms-transform: rotate(@angle);
+    -o-transform: rotate(@angle);
+    transform: rotate(@angle);
+}
+
+.triangle-positioned-down(@x, @y, @size: 10px, @color: #000) {
+    left: @x;
+    top: @y;
+    width: 0; 
+    height: 0; 
+    border-left: @size solid transparent;
+    border-right: @size solid transparent;
+    border-top: @size solid @color;
+    position: absolute;
+}
+
+.triangle-positioned-up(@x, @y, @size: 10px, @color: #000) {
+    left: @x;
+    top: @y;
+    width: 0; 
+    height: 0; 
+    border-left: @size solid transparent;
+    border-right: @size solid transparent;
+    border-bottom: @size solid @color;
+    position: absolute;
+}
+
+.triangle-positioned-left(@x, @y, @size: 10px, @color: #000) {
+    left: @x;
+    top: @y;
+    width: 0; 
+    height: 0; 
+    border-top: @size solid transparent;
+    border-bottom: @size solid transparent;
+    border-right: @size solid @color;
+    position: absolute;
+}
+
+.triangle-positioned-right(@x, @y, @size: 10px, @color: #000) {
+    left: @x;
+    top: @y;
+    width: 0; 
+    height: 0; 
+    border-top: @size solid transparent;
+    border-bottom: @size solid transparent;
+    border-left: @size solid @color;
+    position: absolute;
+}
+
+.triangle-down(@size: 10px, @color: #000) {
+    width: 0; 
+    height: 0; 
+    border-left: @size solid transparent;
+    border-right: @size solid transparent;
+    border-top: @size solid @color;
+}
+
+.triangle-up(@size: 10px, @color: #000) {
+    width: 0; 
+    height: 0; 
+    border-left: @size solid transparent;
+    border-right: @size solid transparent;
+    border-bottom: @size solid @color;
+}
+
+.triangle-left(@size: 10px, @color: #000) {
+    width: 0; 
+    height: 0; 
+    border-top: @size solid transparent;
+    border-bottom: @size solid transparent;
+    border-right: @size solid @color;
+}
+
+.triangle-right(@size: 10px, @color: #000) {
+    width: 0; 
+    height: 0; 
+    border-top: @size solid transparent;
+    border-bottom: @size solid transparent;
+    border-left: @size solid @color;
+}
+
+// TODO: add mixins for @angle & @radius coordinates
